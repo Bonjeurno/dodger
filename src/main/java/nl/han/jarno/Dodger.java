@@ -1,6 +1,8 @@
 package nl.han.jarno;
 
+import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
+import nl.han.jarno.scenes.TitleScene;
 
 /**
  * Het startpunt van onze GAME
@@ -13,11 +15,12 @@ public class Dodger extends YaegerGame {
     
     @Override
     public void setupGame() {
-
+    setGameTitle("Dodger");
+    setSize(new Size(700, 1200));
     }
 
     @Override
     public void setupScenes() {
-
+    addScene(0, new TitleScene(this));
     }
 }

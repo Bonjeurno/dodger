@@ -5,5 +5,5 @@ module dodger {
 
     opens audio;
     opens backgrounds;
-    opens sprites;
+    opens sprites.cars;
 }
