@@ -13,21 +13,21 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import nl.han.jarno.Dodger;
 
-public class PlayAgainButton extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener {
+public class Button extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener {
 
     private Dodger dodger;
 
-    public PlayAgainButton(Coordinate2D initialLocation, Dodger dodger){
-        super(initialLocation,"Play again");
+    public Button(Coordinate2D initialLocation, Dodger dodger, String text) {
+        super(initialLocation, text);
         this.dodger = dodger;
         setFill(Color.YELLOW);
-        setFont(Font.font("Roboto", FontWeight.BOLD, 30));
+        setFont(Font.font("Roboto", FontWeight.BOLD,30));
         setAnchorPoint(AnchorPoint.CENTER_CENTER);
     }
 
     @Override
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
-        dodger.setActiveScene(1);
+        dodger.setActiveScene(2);
     }
 
     @Override

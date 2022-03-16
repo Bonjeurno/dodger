@@ -8,7 +8,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import nl.han.jarno.Dodger;
-import nl.han.jarno.entities.buttons.StartButton;
+import nl.han.jarno.entities.buttons.Button;
 
 public class TitleScene extends StaticScene {
 
@@ -32,7 +32,7 @@ public class TitleScene extends StaticScene {
         dodgerText.setFont(Font.font("Roboto", FontWeight.BOLD, 80));
         addEntity(dodgerText);
 
-        StartButton startButton = new StartButton(new Coordinate2D(getWidth() / 2, getHeight() / 1.7),dodger);
+        Button startButton = new Button(new Coordinate2D(getWidth() / 2, getHeight() / 1.7),dodger, "Play game");
         addEntity(startButton);
     }
 }

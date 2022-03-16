@@ -8,7 +8,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import nl.han.jarno.Dodger;
-import nl.han.jarno.entities.buttons.PlayAgainButton;
+import nl.han.jarno.entities.buttons.Button;
 import nl.han.jarno.entities.buttons.QuitButton;
 
 public class GameOver extends StaticScene {
@@ -32,7 +32,7 @@ public class GameOver extends StaticScene {
         gameoverText.setFont(Font.font("Roboto", FontWeight.BOLD, 80));
         addEntity(gameoverText);
 
-        PlayAgainButton playAgainButton = new PlayAgainButton(new Coordinate2D(getWidth() / 2, getHeight() / 1.7), dodger);
+        Button playAgainButton = new Button(new Coordinate2D(getWidth() / 2, getHeight() / 1.7),dodger, "Play again");
         addEntity(playAgainButton);
 
         QuitButton quitButton = new QuitButton(new Coordinate2D(getWidth() / 2, getHeight() / 1.2), dodger);
