@@ -11,7 +11,7 @@ public class GameLevel extends DynamicScene {
 
     @Override
     public void setupScene() {
-
+    setBackgroundImage("backgrounds/road_background.png");
     }
 
     @Override
