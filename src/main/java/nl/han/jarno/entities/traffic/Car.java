@@ -9,7 +9,7 @@ import com.github.hanyaeger.api.scenes.SceneBorder;
 
 import java.util.Random;
 
-public class Car extends DynamicSpriteEntity implements Traffic, Collider, SceneBorderCrossingWatcher {
+public class Car extends Traffic implements Collider, SceneBorderCrossingWatcher {
 
 
     public Car( Coordinate2D initialLocation) {
