@@ -7,7 +7,7 @@ import nl.han.jarno.scenes.GameOver;
 import nl.han.jarno.scenes.TitleScene;
 
 /**
- * Het startpunt van onze GAME, with dfsdfvds
+ * Het startpunt van onze GAME, with hugokemme7
  */
 public class Dodger extends YaegerGame {
 
