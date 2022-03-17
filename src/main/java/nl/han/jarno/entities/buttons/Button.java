@@ -27,7 +27,7 @@ public class Button extends TextEntity implements MouseButtonPressedListener, Mo
 
     @Override
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
-        dodger.setActiveScene(2);
+        dodger.setActiveScene(1);
     }
 
     @Override

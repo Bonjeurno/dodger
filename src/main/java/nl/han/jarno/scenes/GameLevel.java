@@ -1,7 +1,11 @@
 package nl.han.jarno.scenes;
 
+import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import nl.han.jarno.Dodger;
+import nl.han.jarno.entities.Player;
+import nl.han.jarno.entities.traffic.Car;
+import nl.han.jarno.entities.traffic.Traffic;
 
 public class GameLevel extends DynamicScene {
 
@@ -16,6 +20,9 @@ public class GameLevel extends DynamicScene {
 
     @Override
     public void setupEntities() {
-
+        var player = new Player(new Coordinate2D(300, 800));
+        addEntity(player);
+        var car = new Car(new Coordinate2D(150, 0));
+        addEntity(car);
     }
 }

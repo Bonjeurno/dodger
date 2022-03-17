@@ -1,6 +1,9 @@
 package nl.han.jarno.entities;
 
 import com.github.hanyaeger.api.Coordinate2D;
+import com.github.hanyaeger.api.entities.Collided;
+import com.github.hanyaeger.api.entities.Collider;
+import com.github.hanyaeger.api.entities.Newtonian;
 import com.github.hanyaeger.api.entities.SceneBorderTouchingWatcher;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
@@ -9,12 +12,14 @@ import javafx.scene.input.KeyCode;
 
 import java.util.Set;
 
-public class Player extends DynamicSpriteEntity implements KeyListener, SceneBorderTouchingWatcher {
+public class Player extends DynamicSpriteEntity implements KeyListener, SceneBorderTouchingWatcher, Collided {
 
-    private int speed = 0;
+    private int speed = 2;
 
-    public Player(String resource, Coordinate2D initialLocation) {
-        super(resource, initialLocation);
+    public Player(Coordinate2D initialLocation) {
+
+        super("sprites/cars/player.png", initialLocation);
+
     }
 
     @Override
@@ -23,10 +28,10 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
 
         switch(border){
             case LEFT:
-                setAnchorLocationX(1);
+                setAnchorLocationX(100);
                 break;
             case RIGHT:
-                setAnchorLocationX(getSceneWidth() - getWidth() - 1);
+                setAnchorLocationX(getSceneWidth() - getWidth() - 100);
             default:
                 break;
         }
@@ -35,13 +40,22 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
     @Override
     public void onPressedKeysChange(Set<KeyCode> pressedKeys) {
         if(pressedKeys.contains(KeyCode.LEFT)){
+            setSpeed(2);
             setMotion(speed,270d);
         } else if(pressedKeys.contains(KeyCode.RIGHT)){
+            setSpeed(2);
             setMotion(speed,90d);
+        } else if(pressedKeys.isEmpty()){
+            setSpeed(0);
         }
     }
 
     public void setSpeed(int speed1){
         speed = speed1;
+    }
+
+    @Override
+    public void onCollision(Collider collider) {
+
     }
 }
