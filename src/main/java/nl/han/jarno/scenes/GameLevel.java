@@ -14,9 +14,11 @@ import java.util.Random;
 public class GameLevel extends DynamicScene {
 
     private Dodger dodger;
+    private Traffic traffic;
 
     public GameLevel(Dodger dodger) {
         this.dodger = dodger;
+
     }
 
     @Override
@@ -31,11 +33,12 @@ public class GameLevel extends DynamicScene {
         Player player = new Player(new Coordinate2D(300, 800));
         addEntity(player);
 
-
-        Traffic car = new Car(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0));
-
-
+        var car = new Car(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0));
         addEntity(car);
+
+
+
+
 
     }
 
