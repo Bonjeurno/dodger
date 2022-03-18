@@ -3,6 +3,7 @@ package nl.han.jarno.entities;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
+
 import com.github.hanyaeger.api.entities.Newtonian;
 import com.github.hanyaeger.api.entities.SceneBorderTouchingWatcher;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
@@ -12,14 +13,15 @@ import javafx.scene.input.KeyCode;
 
 import java.util.Set;
 
-public class Player extends DynamicSpriteEntity implements KeyListener, SceneBorderTouchingWatcher, Collided {
+public class Player extends DynamicSpriteEntity implements KeyListener, SceneBorderTouchingWatcher, Collided, Newtonian {
 
     private int speed = 2;
 
     public Player(Coordinate2D initialLocation) {
 
         super("sprites/cars/player.png", initialLocation);
-
+        setGravityConstant(0);
+        setFrictionConstant(0.1);
     }
 
     @Override
@@ -48,6 +50,10 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
         } else if(pressedKeys.isEmpty()){
             setSpeed(0);
         }
+    }
+
+    public void Weerstand(){
+
     }
 
     public void setSpeed(int speed1){

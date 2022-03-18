@@ -6,14 +6,18 @@ import nl.han.jarno.Dodger;
 import nl.han.jarno.entities.Player;
 import nl.han.jarno.entities.traffic.Car;
 import nl.han.jarno.entities.traffic.Traffic;
+import nl.han.jarno.enums.Lane;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class GameLevel extends DynamicScene {
 
     private Dodger dodger;
 
-    public GameLevel(Dodger dodger) {this.dodger = dodger;}
+    public GameLevel(Dodger dodger) {
+        this.dodger = dodger;
+    }
 
     @Override
     public void setupScene() {
@@ -23,11 +27,21 @@ public class GameLevel extends DynamicScene {
     @Override
     public void setupEntities() {
 
-        ArrayList<Traffic> traffic = new ArrayList<Traffic>();
-        var player = new Player(new Coordinate2D(300, 800));
+
+        Player player = new Player(new Coordinate2D(300, 800));
         addEntity(player);
-        var car = new Car(new Coordinate2D(150, 0));
-        traffic.add(car);
+
+
+        Traffic car = new Car(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0));
+
+
+        addEntity(car);
+
+    }
+
+    private Coordinate2D getCarCoordinates(){
+
+        return null;
     }
 
 
