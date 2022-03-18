@@ -9,12 +9,13 @@ import java.util.Random;
 
 public abstract class Traffic extends DynamicSpriteEntity {
     int snelheid = 0;
+    int maxAuto = 10;
+
 
     public Traffic(String resource, Coordinate2D initialLocation) {
         super(resource, initialLocation);
 
     }
-
 
 
 

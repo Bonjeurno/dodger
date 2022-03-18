@@ -33,8 +33,7 @@ public class GameLevel extends DynamicScene {
         Player player = new Player(new Coordinate2D(300, 800));
         addEntity(player);
 
-        var car = new Car(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0));
-        addEntity(car);
+        spawnAutos();
 
 
 
@@ -47,5 +46,18 @@ public class GameLevel extends DynamicScene {
         return null;
     }
 
+    public int aantalAutos(){
+
+        int max = 3;
+        int aantal = new Random().nextInt(max);
+        return aantal;
+    }
+
+    public void spawnAutos(){
+        for(int i=0; i<aantalAutos(); i++){
+            var car = new Car(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0));
+            addEntity(car);
+        }
+    }
 
 }
