@@ -19,7 +19,7 @@ public class GameLevel extends DynamicScene implements EntitySpawnerContainer {
     private HealthText healthText;
     private Dodger dodger;
     private Traffic traffic;
-
+    SpawnTraffic spawnTraffic = new SpawnTraffic(2500, this);
 
     public GameLevel(Dodger dodger) {
         this.dodger = dodger;
@@ -47,7 +47,7 @@ public class GameLevel extends DynamicScene implements EntitySpawnerContainer {
 
     @Override
     public void setupEntitySpawners() {
-        addEntitySpawner(new SpawnTraffic(2500, this));
+        addEntitySpawner(new SpawnTraffic(spawnTraffic.getCurrent(), this));
     }
 
 

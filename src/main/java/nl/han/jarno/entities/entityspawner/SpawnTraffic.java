@@ -13,6 +13,7 @@ import java.util.Random;
 public class SpawnTraffic extends EntitySpawner {
 
     private GameLevel gameLevel;
+    private long current = 2500;
 
     public SpawnTraffic(long intervalInMs, GameLevel gameLevel) {
         super(intervalInMs);
@@ -21,6 +22,7 @@ public class SpawnTraffic extends EntitySpawner {
 
     @Override
     protected void spawnEntities() {
+
         int random = random(6);
         if (random < 1) {
             spawn(new Truck(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
@@ -60,10 +62,21 @@ public class SpawnTraffic extends EntitySpawner {
                     gameLevel));
             spawn(new Police(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
                     gameLevel));
+            System.out.println(getCurrent());
         }
-
+        setCurrent(1000);
 
     }
+
+    private void setCurrent(long interval){
+        current += interval;
+    }
+
+
+    public long getCurrent(){
+        return current;
+    }
+
 
     public int random(int max){
         int random = new Random().nextInt(max);
