@@ -91,7 +91,6 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
         if (collider instanceof Traffic traffic){
             traffic.doDamage(this);
         }
-        //car.doDamage(this);
         healthText.setHealthText(getHealth());
         gameOver(getHealth());
 

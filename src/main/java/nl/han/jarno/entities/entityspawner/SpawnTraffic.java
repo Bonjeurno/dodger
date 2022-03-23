@@ -3,6 +3,7 @@ package nl.han.jarno.entities.entityspawner;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.EntitySpawner;
 import nl.han.jarno.entities.traffic.Car;
+import nl.han.jarno.entities.traffic.Police;
 import nl.han.jarno.entities.traffic.Truck;
 import nl.han.jarno.enums.Lane;
 import nl.han.jarno.scenes.GameLevel;
@@ -20,7 +21,7 @@ public class SpawnTraffic extends EntitySpawner {
 
     @Override
     protected void spawnEntities() {
-        int random = random(4);
+        int random = random(6);
         if (random < 1) {
             spawn(new Truck(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
                     gameLevel));
@@ -47,7 +48,21 @@ public class SpawnTraffic extends EntitySpawner {
                     gameLevel));
             spawn(new Car("sprites/cars/car2.png", new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
                     gameLevel));
+
+        } else if (random == 5) {
+            spawn(new Truck(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
+                    gameLevel));
+            spawn(new Police(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
+                    gameLevel));
+
+        } else if (random == 6) {
+            spawn(new Car("sprites/cars/car2.png", new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
+                    gameLevel));
+            spawn(new Police(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
+                    gameLevel));
         }
+
+
     }
 
     public int random(int max){
