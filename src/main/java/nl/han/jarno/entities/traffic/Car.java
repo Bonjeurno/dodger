@@ -28,7 +28,8 @@ public class Car extends Traffic implements Collider, SceneBorderCrossingWatcher
     @Override
     public void doDamage(Player player) {
         int health = player.getHealth();
-        player.setHealth(health--);
+        player.setHealth(--health);
+        remove();
     }
 
     @Override

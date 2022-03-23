@@ -4,7 +4,6 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.Direction;
-import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import nl.han.jarno.entities.Player;
 import nl.han.jarno.scenes.GameLevel;
 

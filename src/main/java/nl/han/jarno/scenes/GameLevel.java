@@ -42,23 +42,7 @@ public class GameLevel extends DynamicScene implements EntitySpawnerContainer {
         Player player = new Player(new Coordinate2D(300, 800), healthText, dodger);
         addEntity(player);
 
-
-
-
-
-
-
-
-
-
-
     }
-
-    private Coordinate2D getCarCoordinates(){
-
-        return null;
-    }
-
 
 
     @Override
@@ -66,19 +50,7 @@ public class GameLevel extends DynamicScene implements EntitySpawnerContainer {
         addEntitySpawner(new SpawnTraffic(2500, this));
     }
 
-//    public void spawnAutos(){
-//        for(int i=0; i<aantalVehicles(3); i++){
-//            Traffic car = new Car(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0), this);
-//            addEntity(car);
-//        }
-//    }
-//
-//    public void spawnTrucks(){
-//        for(int i=0; i<aantalVehicles(3); i++){
-//            Traffic car = new Car(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0), this);
-//            addEntity(car);
-//        }
-//    }
+
 
 
 

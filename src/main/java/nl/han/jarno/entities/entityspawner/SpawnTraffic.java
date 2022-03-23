@@ -20,7 +20,7 @@ public class SpawnTraffic extends EntitySpawner {
 
     @Override
     protected void spawnEntities() {
-        int random = random(5);
+        int random = random(4);
         if (random < 1) {
             spawn(new Truck(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
                     gameLevel));
