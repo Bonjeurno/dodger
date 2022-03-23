@@ -2,6 +2,7 @@ package nl.han.jarno.entities.traffic;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
+import nl.han.jarno.entities.Player;
 import nl.han.jarno.enums.Lane;
 import nl.han.jarno.scenes.GameLevel;
 
@@ -19,5 +20,7 @@ public abstract class Traffic extends DynamicSpriteEntity {
 
 
 
-    public abstract void doDamage();
+
+
+    public abstract void doDamage(Player player);
 }
