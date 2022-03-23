@@ -12,7 +12,7 @@ public class Truck extends Traffic implements Collider {
     private GameLevel gameLevel;
 
     public Truck(Coordinate2D initialLocation, GameLevel gameLevel) {
-        super("sprites/cars/police.png", initialLocation);
+        super("sprites/cars/truck.png", initialLocation);
         this.gameLevel = gameLevel;
         setMotion(2, Direction.DOWN);
     }

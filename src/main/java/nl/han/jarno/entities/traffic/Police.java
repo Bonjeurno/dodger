@@ -12,7 +12,7 @@ public class Police extends Traffic implements Collider {
     private GameLevel gameLevel;
 
     public Police(Coordinate2D initialLocation, GameLevel gameLevel) {
-        super("sprites/cars/truck.png", initialLocation);
+        super("sprites/cars/police.png", initialLocation);
         this.gameLevel = gameLevel;
         setMotion(2, Direction.DOWN);
     }
