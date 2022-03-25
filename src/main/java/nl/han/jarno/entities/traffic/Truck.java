@@ -4,10 +4,14 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.Direction;
+import com.github.hanyaeger.api.entities.SceneBorderCrossingWatcher;
+import com.github.hanyaeger.api.scenes.SceneBorder;
 import nl.han.jarno.entities.Player;
 import nl.han.jarno.scenes.GameLevel;
 
-public class Truck extends Traffic implements Collider {
+import java.util.Random;
+
+public class Truck extends Traffic implements Collider, SceneBorderCrossingWatcher {
 
     private GameLevel gameLevel;
 
@@ -24,4 +28,9 @@ public class Truck extends Traffic implements Collider {
     }
 
 
+    @Override
+    public void notifyBoundaryCrossing(SceneBorder sceneBorder) {
+        setAnchorLocationX(new Random().nextInt((int) getSceneWidth() - 100));
+        remove();
+    }
 }

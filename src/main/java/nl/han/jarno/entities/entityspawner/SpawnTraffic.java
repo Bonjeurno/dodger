@@ -2,6 +2,7 @@ package nl.han.jarno.entities.entityspawner;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.EntitySpawner;
+import nl.han.jarno.entities.power.Lifes;
 import nl.han.jarno.entities.traffic.Car;
 import nl.han.jarno.entities.traffic.Police;
 import nl.han.jarno.entities.traffic.Truck;
@@ -13,7 +14,7 @@ import java.util.Random;
 public class SpawnTraffic extends EntitySpawner {
 
     private GameLevel gameLevel;
-    private long current = 2500;
+
 
     public SpawnTraffic(long intervalInMs, GameLevel gameLevel) {
         super(intervalInMs);
@@ -24,62 +25,64 @@ public class SpawnTraffic extends EntitySpawner {
     protected void spawnEntities() {
 
         int random = random(6);
-        if (random < 1) {
+        int chancePower = random(10);
+        switch(random) {
+
+            case 1:
+            spawn(new Car("sprites/cars/car2.png", new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
+                    gameLevel));
+
+            break;
+            case 2:
+            spawn(new Car("sprites/cars/car2.png", new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
+                    gameLevel));
             spawn(new Truck(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
                     gameLevel));
-        } else if (random == 1) {
-            spawn(new Car("sprites/cars/car2.png", new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
-                    gameLevel));
-
-        } else if (random == 2) {
-            spawn(new Car("sprites/cars/car2.png", new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
-                    gameLevel));
-            spawn(new Truck(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
-                    gameLevel));
-
-        } else if (random == 3) {
+            break;
+            case 3:
             spawn(new Car("sprites/cars/car1.png", new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
                     gameLevel));
             spawn(new Car("sprites/cars/car1.png", new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
                     gameLevel));
-
-        } else if (random == 4) {
+            break;
+            case 4:
             spawn(new Car("sprites/cars/car1.png", new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
                     gameLevel));
             spawn(new Car("sprites/cars/car1.png", new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
                     gameLevel));
             spawn(new Car("sprites/cars/car2.png", new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
                     gameLevel));
-
-        } else if (random == 5) {
+            break;
+            case 5:
             spawn(new Truck(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
                     gameLevel));
             spawn(new Police(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
                     gameLevel));
-
-        } else if (random == 6) {
+            break;
+            case 6:
             spawn(new Car("sprites/cars/car2.png", new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
                     gameLevel));
             spawn(new Police(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
                     gameLevel));
-            System.out.println(getCurrent());
+            break;
+            default:
+                spawn(new Truck(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
+                        gameLevel));
+                break;
+
+
         }
-        setCurrent(1000);
-
-    }
-
-    private void setCurrent(long interval){
-        current += interval;
-    }
+        if(chancePower == 1){
+            spawn(new Lifes(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0)));
+        }
 
 
-    public long getCurrent(){
-        return current;
     }
 
 
     public int random(int max){
         int random = new Random().nextInt(max);
+
         return random;
     }
 
