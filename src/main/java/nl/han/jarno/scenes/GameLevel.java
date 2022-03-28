@@ -43,8 +43,9 @@ public class GameLevel extends DynamicScene implements EntitySpawnerContainer {
         addEntity(healthText);
         var scoreText = new ScoreText(new Coordinate2D(50, 50));
         addEntity(scoreText);
-        Player player = new Player(new Coordinate2D(200, 800), healthText, dodger, scoreText, this);
+        Player player = new Player(new Coordinate2D(300, 900), healthText, dodger, scoreText, this);
         addEntity(player);
+
 
     }
 
@@ -62,6 +63,7 @@ public class GameLevel extends DynamicScene implements EntitySpawnerContainer {
 
     public void setScore(int score){
         this.score = score;
+
 
 
     }
