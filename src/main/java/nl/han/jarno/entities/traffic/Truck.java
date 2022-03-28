@@ -43,7 +43,7 @@ public class Truck extends Traffic implements Collider, SceneBorderCrossingWatch
         setAnchorLocationX(new Random().nextInt((int) getSceneWidth() - 100));
         remove();
         updateLevel();
-
+        gameLevel.updateScoreText();
     }
 
 

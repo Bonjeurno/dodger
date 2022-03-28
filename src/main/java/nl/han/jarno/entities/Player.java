@@ -56,10 +56,10 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
 
         switch(border){
             case LEFT:
-                setAnchorLocationX(100);
+                setAnchorLocationX(1);
                 break;
             case RIGHT:
-                setAnchorLocationX(getSceneWidth() - getWidth() - 100);
+                setAnchorLocationX(getSceneWidth() - getWidth() - 1);
             default:
                 break;
         }
@@ -90,9 +90,7 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
 
     }
 
-    public void updateScore(){
-        scoreText.setScoreText(score);
-    }
+
 
 
 

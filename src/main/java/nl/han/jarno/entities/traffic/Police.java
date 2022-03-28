@@ -37,6 +37,7 @@ public class Police extends Traffic implements Collider, SceneBorderCrossingWatc
         health -= 2;
         player.setHealth(health);
         remove();
+
     }
 
 
@@ -45,5 +46,6 @@ public class Police extends Traffic implements Collider, SceneBorderCrossingWatc
         setAnchorLocationX(new Random().nextInt((int) getSceneWidth() - 100));
         remove();
         updateLevel();
+        gameLevel.updateScoreText();
     }
 }

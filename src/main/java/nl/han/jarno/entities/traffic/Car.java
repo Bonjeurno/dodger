@@ -48,6 +48,7 @@ public class Car extends Traffic implements Collider, SceneBorderCrossingWatcher
         setAnchorLocationX(new Random().nextInt((int) getSceneWidth() - 100));
         remove();
         updateLevel();
+        gameLevel.updateScoreText();
     }
 
     @Override
