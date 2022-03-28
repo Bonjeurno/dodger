@@ -17,8 +17,7 @@ public abstract class Traffic extends DynamicSpriteEntity  {
     }
 
 
-
-
+    public abstract void updateLevel();
 
 
     public abstract void doDamage(Player player);

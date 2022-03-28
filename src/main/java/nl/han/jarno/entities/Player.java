@@ -12,9 +12,11 @@ import com.github.hanyaeger.api.userinput.KeyListener;
 import javafx.scene.input.KeyCode;
 import nl.han.jarno.Dodger;
 import nl.han.jarno.entities.text.HealthText;
+import nl.han.jarno.entities.text.ScoreText;
 import nl.han.jarno.entities.traffic.Car;
 import nl.han.jarno.entities.traffic.Traffic;
 import nl.han.jarno.entities.traffic.Truck;
+import nl.han.jarno.scenes.GameLevel;
 
 import java.util.ArrayList;
 import java.util.Set;
@@ -23,19 +25,25 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
 
     private HealthText healthText;
     private Dodger dodger;
+    private ScoreText scoreText;
+    private GameLevel gameLevel;
     private int speed = 2;
     private int health = 3;
+    private int score;
 
-    public Player(Coordinate2D initialLocation, HealthText healthText, Dodger dodger) {
+    public Player(Coordinate2D initialLocation, HealthText healthText, Dodger dodger, ScoreText scoreText, GameLevel gameLevel) {
 
         super("sprites/cars/player.png", initialLocation);
         this.healthText = healthText;
         this.dodger = dodger;
+        this.scoreText = scoreText;
+        this.gameLevel = gameLevel;
 
         healthText.setHealthText(health);
+        scoreText.setScoreText(score);
         setGravityConstant(0);
         setFrictionConstant(0.1);
-
+        score = gameLevel.getScore();
 
 
     }
@@ -68,6 +76,8 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
         }
     }
 
+
+
     public int getHealth(){
         return health;
     }
@@ -84,6 +94,8 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
 
         speed = speed1;
     }
+
+
 
     @Override
     public void onCollision(Collider collider) {

@@ -7,6 +7,7 @@ import com.github.hanyaeger.api.entities.Direction;
 import com.github.hanyaeger.api.entities.SceneBorderCrossingWatcher;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import nl.han.jarno.entities.Player;
+import nl.han.jarno.entities.text.ScoreText;
 import nl.han.jarno.scenes.GameLevel;
 
 import java.util.Random;
@@ -14,7 +15,6 @@ import java.util.Random;
 public class Car extends Traffic implements Collider, SceneBorderCrossingWatcher, Collided {
 
     private GameLevel gameLevel;
-
 
     public Car(String recourse,Coordinate2D initialLocation, GameLevel gameLevel) {
 
@@ -24,6 +24,14 @@ public class Car extends Traffic implements Collider, SceneBorderCrossingWatcher
 
     }
 
+
+    @Override
+    public void updateLevel() {
+        int score = gameLevel.getScore();
+        score += 100;
+        gameLevel.setScore(score);
+
+    }
 
     @Override
     public void doDamage(Player player) {
@@ -36,7 +44,7 @@ public class Car extends Traffic implements Collider, SceneBorderCrossingWatcher
     public void notifyBoundaryCrossing(SceneBorder sceneBorder) {
         setAnchorLocationX(new Random().nextInt((int) getSceneWidth() - 100));
         remove();
-
+        updateLevel();
     }
 
     @Override

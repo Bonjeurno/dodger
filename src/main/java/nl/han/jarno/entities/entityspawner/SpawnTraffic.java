@@ -14,6 +14,8 @@ import java.util.Random;
 public class SpawnTraffic extends EntitySpawner {
 
     private GameLevel gameLevel;
+    long current = getIntervalInMs();
+    double interval = 0.95;
 
 
     public SpawnTraffic(long intervalInMs, GameLevel gameLevel) {
@@ -68,13 +70,16 @@ public class SpawnTraffic extends EntitySpawner {
             default:
                 spawn(new Truck(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0),
                         gameLevel));
+
+                current *= interval;
+                setIntervalInMs((current));
                 break;
 
 
         }
-        if(chancePower == 1){
-            spawn(new Lifes(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0)));
-        }
+       // if(chancePower == 1){
+            //spawn(new Lifes(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0)));
+       // }
 
 
     }

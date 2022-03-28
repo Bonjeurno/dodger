@@ -22,6 +22,13 @@ public class Truck extends Traffic implements Collider, SceneBorderCrossingWatch
     }
 
     @Override
+    public void updateLevel() {
+        int score = gameLevel.getScore();
+        score += 100;
+        gameLevel.setScore(score);
+    }
+
+    @Override
     public void doDamage(Player player){
         player.gameOver(0);
         remove();
@@ -32,5 +39,9 @@ public class Truck extends Traffic implements Collider, SceneBorderCrossingWatch
     public void notifyBoundaryCrossing(SceneBorder sceneBorder) {
         setAnchorLocationX(new Random().nextInt((int) getSceneWidth() - 100));
         remove();
+        updateLevel();
+
     }
+
+
 }

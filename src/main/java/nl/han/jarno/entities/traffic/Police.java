@@ -22,6 +22,13 @@ public class Police extends Traffic implements Collider, SceneBorderCrossingWatc
     }
 
     @Override
+    public void updateLevel() {
+        int score = gameLevel.getScore();
+        score += 100;
+        gameLevel.setScore(score);
+    }
+
+    @Override
     public void doDamage(Player player){
         int health = player.getHealth();
         health -= 2;
@@ -34,5 +41,6 @@ public class Police extends Traffic implements Collider, SceneBorderCrossingWatc
     public void notifyBoundaryCrossing(SceneBorder sceneBorder) {
         setAnchorLocationX(new Random().nextInt((int) getSceneWidth() - 100));
         remove();
+        updateLevel();
     }
 }
