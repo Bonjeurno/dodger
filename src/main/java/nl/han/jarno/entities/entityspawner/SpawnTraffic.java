@@ -16,11 +16,13 @@ public class SpawnTraffic extends EntitySpawner {
     private GameLevel gameLevel;
     long current = getIntervalInMs();
     double interval = 0.95;
+    private double speed;
 
 
     public SpawnTraffic(long intervalInMs, GameLevel gameLevel) {
         super(intervalInMs);
         this.gameLevel = gameLevel;
+        speed = gameLevel.getGamespeed();
     }
 
     @Override
@@ -73,6 +75,8 @@ public class SpawnTraffic extends EntitySpawner {
 
                 current *= interval;
                 setIntervalInMs((current));
+                speed *= 1.05;
+                gameLevel.setGamespeed(speed);
                 break;
 
 

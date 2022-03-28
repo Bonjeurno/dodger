@@ -16,11 +16,14 @@ public class Car extends Traffic implements Collider, SceneBorderCrossingWatcher
 
     private GameLevel gameLevel;
 
+    private double speed = 0;
+
     public Car(String recourse,Coordinate2D initialLocation, GameLevel gameLevel) {
 
         super(recourse, initialLocation);
         this.gameLevel = gameLevel;
-        setMotion(2, Direction.DOWN);
+        speed = gameLevel.getGamespeed();
+        setMotion(speed, Direction.DOWN);
 
     }
 

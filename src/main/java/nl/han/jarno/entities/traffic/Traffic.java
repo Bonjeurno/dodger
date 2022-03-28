@@ -11,6 +11,7 @@ import java.util.Random;
 
 public abstract class Traffic extends DynamicSpriteEntity  {
 
+
     public Traffic(String resource, Coordinate2D initialLocation) {
         super(resource, initialLocation);
 

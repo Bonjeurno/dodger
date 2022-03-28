@@ -21,6 +21,7 @@ public class GameLevel extends DynamicScene implements EntitySpawnerContainer {
     private Traffic traffic;
     private long current = 3000;
     private int score;
+    private double gameSpeed = 2;
 
     public GameLevel(Dodger dodger) {
         this.dodger = dodger;
@@ -64,6 +65,15 @@ public class GameLevel extends DynamicScene implements EntitySpawnerContainer {
 
 
     }
+
+    public double getGamespeed(){
+        return gameSpeed;
+    }
+
+    public void setGamespeed(double speed){
+        gameSpeed = speed;
+    }
+
 
 
 }

@@ -27,7 +27,8 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
     private Dodger dodger;
     private ScoreText scoreText;
     private GameLevel gameLevel;
-    private int speed = 2;
+
+    private double speed;
     private int health = 3;
     private int score;
 
@@ -44,7 +45,7 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
         setGravityConstant(0);
         setFrictionConstant(0.1);
         score = gameLevel.getScore();
-
+        speed = gameLevel.getGamespeed();
 
     }
 
@@ -54,10 +55,10 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
 
         switch(border){
             case LEFT:
-                setAnchorLocationX(1);
+                setAnchorLocationX(100);
                 break;
             case RIGHT:
-                setAnchorLocationX(getSceneWidth() - getWidth() - 1);
+                setAnchorLocationX(getSceneWidth() - getWidth() - 100);
             default:
                 break;
         }
@@ -66,10 +67,8 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
     @Override
     public void onPressedKeysChange(Set<KeyCode> pressedKeys) {
         if(pressedKeys.contains(KeyCode.LEFT)){
-            setSpeed(2);
             setMotion(speed,270d);
         } else if(pressedKeys.contains(KeyCode.RIGHT)){
-            setSpeed(2);
             setMotion(speed,90d);
         } else if(pressedKeys.isEmpty()){
             setSpeed(0);
@@ -90,10 +89,7 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
 
     }
 
-    public void setSpeed(int speed1){
 
-        speed = speed1;
-    }
 
 
 

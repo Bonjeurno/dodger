@@ -15,10 +15,13 @@ public class Police extends Traffic implements Collider, SceneBorderCrossingWatc
 
     private GameLevel gameLevel;
 
+    private double speed = 0;
+
     public Police(Coordinate2D initialLocation, GameLevel gameLevel) {
         super("sprites/cars/police.png", initialLocation);
         this.gameLevel = gameLevel;
-        setMotion(2, Direction.DOWN);
+        speed = gameLevel.getGamespeed();
+        setMotion(speed, Direction.DOWN);
     }
 
     @Override
