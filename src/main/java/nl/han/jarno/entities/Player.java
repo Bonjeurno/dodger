@@ -120,6 +120,7 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
     }
     public void checkHighscore(){
         if(gameLevel.getScore() > dodger.getHighscore()){
+
             dodger.setHighscore(gameLevel.getScore());
         }
     }

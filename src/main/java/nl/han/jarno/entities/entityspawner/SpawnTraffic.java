@@ -28,8 +28,21 @@ public class SpawnTraffic extends EntitySpawner {
     @Override
     protected void spawnEntities() {
 
-        int random = random(6);
-        int chancePower = random(20);
+        int random = 0;
+        int chancePower = 0;
+
+        if(gameLevel.getScore() < 2000) {
+            random = random(3);
+            chancePower = random(15);
+        } else if(gameLevel.getScore() > 2000 && gameLevel.getScore() < 10000){
+            random = random(6);
+            chancePower = random(20);
+        } else {
+            random = random(9);
+            chancePower = random(30);
+        }
+
+
         switch(random) {
 
             case 1:
@@ -63,6 +76,11 @@ public class SpawnTraffic extends EntitySpawner {
             spawn(new Truck(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), -100),
                     gameLevel));
 
+                current *= interval;
+                setIntervalInMs((current));
+                speed *= 1.05;
+                gameLevel.setGamespeed(speed);
+
             break;
             case 6:
             spawn(new Car("sprites/cars/car2.png", new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), -100),
@@ -70,14 +88,33 @@ public class SpawnTraffic extends EntitySpawner {
             spawn(new Police(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), -100),
                     gameLevel));
             break;
+            case 7:
+                spawn(new Truck(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), -100),
+                        gameLevel));
+                spawn(new Truck(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), -100),
+                        gameLevel));
+                break;
+            case 8:
+                spawn(new Truck(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), -100),
+                        gameLevel));
+                spawn(new Police(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), -100),
+                        gameLevel));
+                spawn(new Police(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), -100),
+                        gameLevel));
+                break;
+            case 9:
+                spawn(new Police(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), -100),
+                        gameLevel));
+                spawn(new Truck(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), -100),
+                        gameLevel));
+                spawn(new Truck(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), -100),
+                        gameLevel));
+                break;
             default:
                 spawn(new Truck(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), -100),
                         gameLevel));
 
-                current *= interval;
-                setIntervalInMs((current));
-                speed *= 1.05;
-                gameLevel.setGamespeed(speed);
+
                 break;
 
 
