@@ -108,7 +108,16 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
 
     public void gameOver(int lives){
         if(lives <= 0){
+            checkHighscore();
             dodger.setActiveScene(2);
+            gameLevel.setScore(0);
+            gameLevel.setGamespeed(2);
+            setHealth(3);
+        }
+    }
+    public void checkHighscore(){
+        if(gameLevel.getScore() > dodger.getHighscore()){
+            dodger.setHighscore(gameLevel.getScore());
         }
     }
 }
