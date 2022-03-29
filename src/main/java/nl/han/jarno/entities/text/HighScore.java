@@ -20,7 +20,7 @@ public class HighScore extends TextEntity {
 
         setAnchorPoint(AnchorPoint.CENTER_CENTER);
         setFill(Color.WHITE);
-        setFont(Font.font("Roboto", FontWeight.BOLD, 50));
+        setFont(Font.font("Roboto", FontWeight.BOLD, 45));
 
     }
 

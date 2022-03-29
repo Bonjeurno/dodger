@@ -83,9 +83,9 @@ public class SpawnTraffic extends EntitySpawner {
 
         }
 
-       // if(chancePower == 1){
-            //spawn(new Lifes(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0)));
-       // }
+       if(chancePower == 1){
+            spawn(new Lifes(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0), gameLevel));
+        }
 
 
     }
