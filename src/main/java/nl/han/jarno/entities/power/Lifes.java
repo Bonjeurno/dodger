@@ -9,7 +9,7 @@ import com.github.hanyaeger.api.scenes.SceneBorder;
 import nl.han.jarno.entities.Player;
 import nl.han.jarno.scenes.GameLevel;
 
-public class Lifes extends Power implements Collider, Collided, SceneBorderCrossingWatcher {
+public class Lifes extends Power implements Collider, SceneBorderCrossingWatcher {
 
     private GameLevel gameLevel;
     private double speed;
@@ -23,14 +23,10 @@ public class Lifes extends Power implements Collider, Collided, SceneBorderCross
     }
 
     @Override
-    public void onCollision(Collider collider) {
-        remove();
-    }
-
-    @Override
     public void doPower(Player player) {
         int health = player.getHealth();
         player.setHealth(++health);
+        remove();
     }
 
     @Override

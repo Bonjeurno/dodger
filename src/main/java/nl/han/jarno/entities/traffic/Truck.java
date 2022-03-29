@@ -21,7 +21,7 @@ public class Truck extends Traffic implements Collider, SceneBorderCrossingWatch
         super("sprites/cars/truck.png", initialLocation);
         this.gameLevel = gameLevel;
         speed = gameLevel.getGamespeed();
-        setMotion(speed / 1.2, Direction.DOWN);
+        setMotion(speed / 1.1, Direction.DOWN);
     }
 
     @Override
@@ -33,7 +33,9 @@ public class Truck extends Traffic implements Collider, SceneBorderCrossingWatch
 
     @Override
     public void doDamage(Player player){
-        player.gameOver(0);
+        int health = player.getHealth();
+        health -= 3;
+        player.setHealth(health);
         remove();
     }
 

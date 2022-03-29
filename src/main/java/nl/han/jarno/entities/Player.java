@@ -11,6 +11,7 @@ import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.api.userinput.KeyListener;
 import javafx.scene.input.KeyCode;
 import nl.han.jarno.Dodger;
+import nl.han.jarno.entities.power.Power;
 import nl.han.jarno.entities.text.HealthText;
 import nl.han.jarno.entities.text.ScoreText;
 import nl.han.jarno.entities.traffic.Car;
@@ -99,6 +100,8 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
 
         if (collider instanceof Traffic traffic){
             traffic.doDamage(this);
+        } else if(collider instanceof Power power){
+            power.doPower(this);
         }
         healthText.setHealthText(getHealth());
         gameOver(getHealth());

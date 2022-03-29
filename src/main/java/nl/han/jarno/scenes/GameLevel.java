@@ -22,7 +22,7 @@ public class GameLevel extends DynamicScene implements EntitySpawnerContainer {
     private Traffic traffic;
     private long current = 2500;
     private int score;
-    private double gameSpeed = 2;
+    private double gameSpeed = 1.8;
     private HighScore highScore;
     ScoreText scoreText = new ScoreText(new Coordinate2D(50, 50));
 

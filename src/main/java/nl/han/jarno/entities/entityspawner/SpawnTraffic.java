@@ -29,7 +29,7 @@ public class SpawnTraffic extends EntitySpawner {
     protected void spawnEntities() {
 
         int random = random(6);
-        int chancePower = random(10);
+        int chancePower = random(20);
         switch(random) {
 
             case 1:
@@ -83,8 +83,11 @@ public class SpawnTraffic extends EntitySpawner {
 
         }
 
-       if(chancePower == 1){
+       switch(chancePower){
+           case 1:
             spawn(new Lifes(new Coordinate2D(Lane.values()[new Random().nextInt(Lane.values().length)].getLaneCoordinate(), 0), gameLevel));
+            break;
+
         }
 
 
