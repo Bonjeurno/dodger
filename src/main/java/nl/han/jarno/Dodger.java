@@ -12,7 +12,8 @@ import nl.han.jarno.scenes.TitleScene;
  * Het startpunt van onze GAME, with hugokemme7
  */
 public class Dodger extends YaegerGame {
-    private HealthText healthText;
+
+    private int highscore = 0;
 
 
     public static void main(String[] args){
@@ -30,5 +31,13 @@ public class Dodger extends YaegerGame {
     addScene(0, new TitleScene(this));
     addScene(1, new GameLevel(this));
     addScene(2, new GameOver(this));
+    }
+
+    public void setHighscore(int score){
+        highscore = score;
+    }
+
+    public int getHighscore(){
+        return highscore;
     }
 }

@@ -21,7 +21,7 @@ public class Truck extends Traffic implements Collider, SceneBorderCrossingWatch
         super("sprites/cars/truck.png", initialLocation);
         this.gameLevel = gameLevel;
         speed = gameLevel.getGamespeed();
-        setMotion(speed, Direction.DOWN);
+        setMotion(speed / 1.2, Direction.DOWN);
     }
 
     @Override

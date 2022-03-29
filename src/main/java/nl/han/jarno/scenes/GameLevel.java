@@ -7,6 +7,7 @@ import nl.han.jarno.Dodger;
 import nl.han.jarno.entities.Player;
 import nl.han.jarno.entities.entityspawner.SpawnTraffic;
 import nl.han.jarno.entities.text.HealthText;
+import nl.han.jarno.entities.text.HighScore;
 import nl.han.jarno.entities.text.ScoreText;
 import nl.han.jarno.entities.traffic.Car;
 import nl.han.jarno.entities.traffic.Traffic;
@@ -19,10 +20,12 @@ public class GameLevel extends DynamicScene implements EntitySpawnerContainer {
 
     private Dodger dodger;
     private Traffic traffic;
-    private long current = 3000;
+    private long current = 2500;
     private int score;
     private double gameSpeed = 2;
+    private HighScore highScore;
     ScoreText scoreText = new ScoreText(new Coordinate2D(50, 50));
+
 
     public GameLevel(Dodger dodger) {
         this.dodger = dodger;
