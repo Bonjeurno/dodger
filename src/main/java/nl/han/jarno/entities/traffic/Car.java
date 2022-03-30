@@ -12,7 +12,11 @@ import nl.han.jarno.scenes.GameLevel;
 
 import java.util.Random;
 
-public class Car extends Traffic implements Collider, SceneBorderCrossingWatcher, Collided {
+/**
+ * dit it een subklasse van de superklasse traffic. indien collided met speler zal er 1 leven vanaf gaan, als deze het scherm verlaat zal er 100 bij de score worden opgeteld.
+ */
+
+public class Car extends Traffic implements Collider, SceneBorderCrossingWatcher {
 
     private GameLevel gameLevel;
 
@@ -51,8 +55,4 @@ public class Car extends Traffic implements Collider, SceneBorderCrossingWatcher
         gameLevel.updateScoreText();
     }
 
-    @Override
-    public void onCollision(Collider collider) {
-        remove();
-    }
 }

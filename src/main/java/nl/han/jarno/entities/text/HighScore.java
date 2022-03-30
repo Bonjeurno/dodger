@@ -8,6 +8,10 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import nl.han.jarno.Dodger;
 
+/**
+ * in deze klasse worden de waardes van de highscore meegegeven.
+ */
+
 public class HighScore extends TextEntity {
 
     private Dodger dodger;

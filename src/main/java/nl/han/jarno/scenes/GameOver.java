@@ -12,6 +12,10 @@ import nl.han.jarno.entities.buttons.Button;
 import nl.han.jarno.entities.buttons.QuitButton;
 import nl.han.jarno.entities.text.HighScore;
 
+/**
+ * dit is het game over scherm voor als je dood gaat. vanaf hier kan je de highscore zien, opnieuw spelen of stoppen
+ */
+
 public class GameOver extends StaticScene {
 
     private Dodger dodger;

@@ -9,6 +9,10 @@ import nl.han.jarno.scenes.GameLevel;
 
 import java.util.Random;
 
+/**
+ * dit is een abstracte super klasse, deze geeft de functies updateLeven en doDamage mee.
+ */
+
 public abstract class Traffic extends DynamicSpriteEntity  {
 
 

@@ -13,6 +13,10 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import nl.han.jarno.Dodger;
 
+/**
+ * dit is de quit button van ons spel, indien geactieveerd wordt het spel afgesloten.
+ */
+
 public class QuitButton extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener {
 
     private Dodger dodger;

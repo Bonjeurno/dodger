@@ -13,6 +13,11 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import nl.han.jarno.Dodger;
 
+
+/**
+ * dit is de startknop / play again knop van onze game.
+ */
+
 public class Button extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener {
 
     private Dodger dodger;

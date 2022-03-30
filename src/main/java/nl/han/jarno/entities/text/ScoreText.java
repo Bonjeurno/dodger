@@ -6,6 +6,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
+/**
+ * in deze klasse woorden de eigenschappen van de score text meegeven. per traffic entity die het scherm verlaat wordt er 100 bij opgeteld.
+ */
+
 public class ScoreText extends TextEntity {
 
     public ScoreText(Coordinate2D initialLocation){

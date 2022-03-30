@@ -6,6 +6,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
+/**
+ * in deze klasse worden de eigenschappen van de health text meegegeven.
+ */
+
 public class HealthText extends TextEntity {
 
     public HealthText(Coordinate2D initialLocation){

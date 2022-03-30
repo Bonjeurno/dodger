@@ -9,7 +9,7 @@ import nl.han.jarno.scenes.GameOver;
 import nl.han.jarno.scenes.TitleScene;
 
 /**
- * Het startpunt van onze GAME, with hugokemme7
+ * dit is het startpunt van onze game, hier wordt de highscore bijgehouden en de scenes geinitialiseerd.
  */
 public class Dodger extends YaegerGame {
 

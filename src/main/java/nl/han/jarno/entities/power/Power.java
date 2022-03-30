@@ -4,6 +4,10 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import nl.han.jarno.entities.Player;
 
+/**
+ * dit is de super klasse van alle power ups, deze geeft de functie doPower mee
+ */
+
 public abstract class Power extends DynamicSpriteEntity {
 
 

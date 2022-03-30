@@ -10,6 +10,10 @@ import javafx.scene.text.FontWeight;
 import nl.han.jarno.Dodger;
 import nl.han.jarno.entities.buttons.Button;
 
+/**
+ * dit is het start scherm. vanaf hier kan je het spel beginnen.
+ */
+
 public class TitleScene extends StaticScene {
 
     private Dodger dodger;

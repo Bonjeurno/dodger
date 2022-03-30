@@ -11,6 +11,10 @@ import nl.han.jarno.scenes.GameLevel;
 
 import java.util.Random;
 
+/**
+ * dit is een subklasse van de superklasse traffic, indien collided met player. health -3.
+ */
+
 public class Truck extends Traffic implements Collider, SceneBorderCrossingWatcher {
 
     private GameLevel gameLevel;
