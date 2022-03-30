@@ -27,19 +27,18 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
     private Dodger dodger;
     private ScoreText scoreText;
     private GameLevel gameLevel;
-    private SidewalkL sidewalkL;
 
     private int health = 3;
     private int score;
 
-    public Player(Coordinate2D initialLocation, HealthText healthText, Dodger dodger, ScoreText scoreText, GameLevel gameLevel, SidewalkL sidewalkL) {
+    public Player(Coordinate2D initialLocation, HealthText healthText, Dodger dodger, ScoreText scoreText, GameLevel gameLevel) {
 
         super("sprites/cars/player.png", initialLocation);
         this.healthText = healthText;
         this.dodger = dodger;
         this.scoreText = scoreText;
         this.gameLevel = gameLevel;
-        this.sidewalkL =sidewalkL;
+
 
 
         healthText.setHealthText(health);

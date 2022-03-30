@@ -48,7 +48,7 @@ public class GameLevel extends DynamicScene implements EntitySpawnerContainer {
         var sidewalkR = new SidewalkR(new Coordinate2D(600, 0));
         addEntity(sidewalkR);
         addEntity(scoreText);
-        Player player = new Player(new Coordinate2D(300, 900), healthText, dodger, scoreText, this, sidewalkL);
+        Player player = new Player(new Coordinate2D(300, 900), healthText, dodger, scoreText, this);
         addEntity(player);
 
 
